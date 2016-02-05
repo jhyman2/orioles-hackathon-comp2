@@ -9,11 +9,35 @@ export default class Hello extends Component {
     super();
   }
 
+  componentDidMount () {
+    if (this.pitchLocation) {
+      console.log('this.pitchLocation', this.pitchLocation);
+      const c   = document.getElementById("whereToPitch");
+      const ctx = c.getContext("2d");
+      ctx.beginPath();
+      ctx.arc(100,75,10,0,2*Math.PI);
+      ctx.stroke();
+
+      // const ctx2 = c.getContext("2d");
+      // ctx2.beginPath();
+      // ctx2.arc(50,75,10,0,2*Math.PI);
+      // ctx2.stroke();
+    }
+  }
+
   render () {
+    let pitchLocation;
+    document.body.style["background-size"] = "cover";
+    document.body.style.width      = "100%";
+    document.body.style.height     = "100%";
+    document.body.style.margin     = 0;
+    document.body.style.padding    = 0;
+    document.body.style.background = '#f1f1f1';
+
+
     if (document.location.search) {
       const regex = new RegExp(/\?loc=(.*)/);
-      const pitchLocation = document.location.search.match(regex)[1];
-      console.log(pitchLocation);
+      this.pitchLocation = document.location.search.match(regex)[1];
     }
 
     const canvasStyle = {
@@ -56,10 +80,14 @@ export default class Hello extends Component {
       width: "100px"
     }
 
+    const whereToPitchStyle = {
+      border:"5px solid #AAAAAA"
+    };
+
     return (
       <div id="indexTest" style={containerStyle}>
         <div id="targetBox" style={canvasContainer}>
-          <canvas id="myCanvas" width="200" height="250" style={canvasStyle}></canvas>
+          {this.pitchLocation ? <canvas id="whereToPitch" width="200" height="250" style={canvasStyle}></canvas> : <canvas style={canvasStyle} width="200" height="250" id="myCanvas"></canvas>}
         </div>
         <form style={formStyle} action="batter" method="post">
           <h1>Batters Information:</h1>
