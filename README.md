@@ -5,7 +5,7 @@
 <h3>What is Pitch Black?</h3>
 <p>A predictive application that will inform a pitcher of where they can best ensure to throw a good pitch.</p>
 
-<h3>Why does it work?</h3>
+<h3>How does it work?</h3>
 <p>It uses previous Pitch f/x data and calculates where batters perform their best and where they perform their worst.</p>
 
 <h3>How will it be used?</h3>
