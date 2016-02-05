@@ -1,0 +1,23 @@
+Coefficients:
+Estimate Std. Error z value Pr(>|z|)
+(Intercept) -24.0321 13.5132 -1.778 0.07534 .
+rsfx$init_vel_x 0.4295 0.1464 2.935 0.00334 *
+rsfx$init_vel_y -0.2511 0.1183 -2.123 0.03379
+rsfx$init_vel_z 0.2066 0.1592 1.297 0.19448
+rsfx$pitch_number 0.4984 0.2857 1.744 0.08109 .
+rsfx$pitch_typeCU 0.7391 2.4088 0.307 0.75898
+rsfx$pitch_typeFC -4.9536 2.7276 -1.816 0.06936 .
+rsfx$pitch_typeFF -5.3557 2.7569 -1.943 0.05205 .
+rsfx$pitch_typeFS -19.4409 3956.1808 -0.005 0.99608
+rsfx$pitch_typeFT -3.4343 2.9043 -1.182 0.23701
+rsfx$pitch_typeKC -18.8337 2141.6488 -0.009 0.99298
+rsfx$pitch_typeKN 19.1063 3956.1807 0.005 0.99615
+rsfx$pitch_typeSI -5.0620 2.6456 -1.913 0.05570 .
+rsfx$pitch_typeSL -1.5772 1.9344 -0.815 0.41487
+rsfx$throwsR -6.8545 2.2393 -3.061 0.00221 **
+Signif. codes: 0 ‘*’ 0.001 ‘’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+(Dispersion parameter for binomial family taken to be 1)
+Null deviance: 79.881  on 59  degrees of freedom
+Residual deviance: 46.413 on 45 degrees of freedom
+AIC: 76.413
+Number of Fisher Scoring iterations: 16
