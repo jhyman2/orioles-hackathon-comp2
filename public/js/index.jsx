@@ -15,13 +15,9 @@ export default class Hello extends Component {
       const c   = document.getElementById("whereToPitch");
       const ctx = c.getContext("2d");
       ctx.beginPath();
-      ctx.arc(100,75,10,0,2*Math.PI);
+      ctx.strokeStyle="red";
+      ctx.arc(100 + Number(this.pitchLocation[0]), 150 + Number(this.pitchLocation[1]),10,0,2*Math.PI);
       ctx.stroke();
-
-      // const ctx2 = c.getContext("2d");
-      // ctx2.beginPath();
-      // ctx2.arc(50,75,10,0,2*Math.PI);
-      // ctx2.stroke();
     }
   }
 
@@ -37,8 +33,14 @@ export default class Hello extends Component {
 
     if (document.location.search) {
       const regex = new RegExp(/\?loc=(.*)/);
-      this.pitchLocation = document.location.search.match(regex)[1];
+      this.pitchLocation = document.location.search.match(regex)[1].split(',');
     }
+
+    const titleStyle = {
+      display: "flex",
+      justifyContent: "center",
+      fontFamily: '"Trebuchet MS", Helvetica, sans-serif'
+    };
 
     const canvasStyle = {
       border:"1px solid #000000"
@@ -86,22 +88,17 @@ export default class Hello extends Component {
 
     return (
       <div id="indexTest" style={containerStyle}>
+        <h1 style={titleStyle}>Pitch Black</h1>
         <div id="targetBox" style={canvasContainer}>
           {this.pitchLocation ? <canvas id="whereToPitch" width="200" height="250" style={canvasStyle}></canvas> : <canvas style={canvasStyle} width="200" height="250" id="myCanvas"></canvas>}
         </div>
         <form style={formStyle} action="batter" method="post">
-          <h1>Batters Information:</h1>
+          <h3 style={titleStyle}>Batter Information:</h3>
           <div id="inputContainer" style={inputContainerStyle}>
             First name:
             <input type="text" name="firstname" />
             Last name:
             <input type="text" name="lastname" />
-            Balls:
-            <input type="number" name="balls" />
-            Strikes:
-            <input type="number" name="strikes" />
-            Outs:
-            <input type="number" name="outs" />
           </div>
           <input type="submit" value="Go" style={submitBtn} />
         </form>

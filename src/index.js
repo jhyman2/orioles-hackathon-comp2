@@ -29,7 +29,10 @@ app.post('/batter', function (req, res) {
   var strikes   = req.body.strikes;
   var outs      = req.body.outs;
 
-  res.redirect('/?loc=76.332423');
+  var a = Math.floor(Math.random() * 200) - 100;
+  var b = Math.floor(Math.random() * 200) - 100;
+
+  res.redirect('/?loc=' + a.toString() + ',' + b.toString());
   // var x = req.params.x * 1;
   // var y = req.params.y * 1;
   // res.send({ sum: x * y });
