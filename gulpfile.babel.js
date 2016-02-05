@@ -23,7 +23,7 @@ gulp.task('default', cb => {
 });
 
 gulp.task('build', cb => {
-  run('clean-client', 'flow', 'webpack', 'restart', cb);
+  run('clean-client', 'webpack', 'restart', cb);
 });
 
 gulp.task('build-dev', cb => {

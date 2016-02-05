@@ -21,7 +21,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [new HtmlWebpackPlugin({
-    title: 'React boilerplate!',
+    title: 'Pitch black',
     template: './public/index.html',
     inject: 'body'
   })],

@@ -12,7 +12,7 @@ export default class Hello extends Component {
   render () {
     return (
       <div id="indexTest">
-        <h1>You should pitch a <strong>ball</strong></h1>
+        <canvas id="myCanvas" width="200" height="200" style={{border:"1px solid #000000"}}></canvas>
       </div>
     );
   }
