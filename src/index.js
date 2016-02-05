@@ -4,14 +4,11 @@
 
 var express      = require('express');
 var bodyParser   = require('body-parser');
-var multer       = require('multer');
 var morgan       = require('morgan');
 var http         = require('http');
-var socketio     = require('socket.io');
 
 var app    = express();
 var server = http.Server(app);
-var upload = multer();
 
 app.use(express.static(__dirname + '/../build'));
 
