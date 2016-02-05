@@ -11,7 +11,6 @@ var socketio     = require('socket.io');
 
 var app    = express();
 var server = http.Server(app);
-var io     = socketio(server);
 var upload = multer();
 
 app.use(express.static(__dirname + '/../build'));
@@ -20,22 +19,18 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-io.on('connection', function (socket) {
-  console.log('*** USER HAS ENTERED :) ***');
-  socket.on('disconnect', function () {
-    console.log('*** USER HAS LEFT :( ***');
-  });
-
-  socket.on('chat message', function(msg) {
-    console.log('USER SAID: ', msg);
-    io.emit('chat message', msg);
-  });
-});
-
 server.listen(3000);
 
-app.get('/sum/:x/:y', function (req, res) {
-  var x = req.params.x * 1;
-  var y = req.params.y * 1;
-  res.send({ sum: x * y });
+app.post('/batter', function (req, res) {
+  console.log('batter', req.body);
+  var firstname = req.body.firstname;
+  var lastname  = req.body.lastname;
+  var balls     = req.body.balls;
+  var strikes   = req.body.strikes;
+  var outs      = req.body.outs;
+
+  res.redirect('/?loc=76.332423');
+  // var x = req.params.x * 1;
+  // var y = req.params.y * 1;
+  // res.send({ sum: x * y });
 });

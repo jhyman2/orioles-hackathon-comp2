@@ -10,6 +10,11 @@ export default class Hello extends Component {
   }
 
   render () {
+    if (document.location.search) {
+      const regex = new RegExp(/\?loc=(.*)/);
+      const pitchLocation = document.location.search.match(regex)[1];
+      console.log(pitchLocation);
+    }
 
     const canvasStyle = {
       border:"1px solid #000000"
@@ -56,7 +61,7 @@ export default class Hello extends Component {
         <div id="targetBox" style={canvasContainer}>
           <canvas id="myCanvas" width="200" height="250" style={canvasStyle}></canvas>
         </div>
-        <form style={formStyle}>
+        <form style={formStyle} action="batter" method="post">
           <h1>Batters Information:</h1>
           <div id="inputContainer" style={inputContainerStyle}>
             First name:
