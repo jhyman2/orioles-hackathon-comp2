@@ -33,7 +33,4 @@ app.post('/batter', function (req, res) {
   var b = Math.floor(Math.random() * 200) - 100;
 
   res.redirect('/?loc=' + a.toString() + ',' + b.toString());
-  // var x = req.params.x * 1;
-  // var y = req.params.y * 1;
-  // res.send({ sum: x * y });
 });
